@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <button class="exit-button">Выйти</button>
+            <h1 style="color: white; text-align:center">Страница администратора</h1>
+        </header>
+        <main>
+            <div class="tickets-out"></div>
+            <div class="new-ticket">
+                <p>Для добавления нового рейса:</p>
+                <p>Откуда: <input type="text" name="from-city"></p>
+                <p>Куда: <input type="text" name="to-city"></p>
+                <p>Время: <input type="time" name="time"></p>
+                <p>Дата(в формате ГГГГ-ММ-ДД): <input type="text" name="date"></p>
+                <p>Кол-во мест: <input type="number" name="places"></p>
+                <p>Стоимость: <input type="number" name="price"></p>
+                <button class="add-new-ticket-button">Добавить новый рейс</button>
+            </div>
+            <p style="color: #ffffff; font-size: 18px; text-align:center">Удаление рейсов</p>
+            <div class="delete-tickets-div"></div>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
