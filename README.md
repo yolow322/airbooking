@@ -1,2 +1,2 @@
-# airbooking
-Air-tickets booking website
+<p>В качестве СУБД использовал PostgeSQL. Для использования страницы администратора, необходимо создать в запись в таблице Users (код для этого есть в файле со скриптом init.sql).</p>
+<p>Для подключения к БД нужно изменить следующую строчку в классе src/classes/DataBaseConfig.php <code>$this->db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres;user=postgres;password=111');</code> dbname - на навазние вашей БД, user - на логин БД, password - на пароль вашей БД.</p>
