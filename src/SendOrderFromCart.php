@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Sending user order to data base
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 

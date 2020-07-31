@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Showing user orders in modal window on home page
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 

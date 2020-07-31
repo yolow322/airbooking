@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Showing pre-ordered tickets in mini cart
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 

@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Used to for deleting user order from modal window on home page
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 

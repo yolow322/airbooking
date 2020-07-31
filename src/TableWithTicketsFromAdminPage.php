@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Auxiliary script for deleting tickets on admin page which generate table with info about ticket
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 
@@ -44,5 +49,5 @@ if (!empty($query->checkingExistingTickets())) {
     }
 }
 else {
-    echo '<p css="text-align:center; font-size: 18px;">В данный момент нет рейсов!</p>';
+    echo '<p style="text-align:center; font-size: 18px;">В данный момент нет рейсов!</p>';
 }

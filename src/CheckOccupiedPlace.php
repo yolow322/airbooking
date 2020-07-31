@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Used to for checking occupied places in table
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 

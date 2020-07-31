@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Used to for user authorization
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 

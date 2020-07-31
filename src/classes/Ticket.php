@@ -127,12 +127,6 @@ class Ticket
         return $this->ticketFreePlaces;
     }
 
-    public function validateDate($date, $format = 'Y-m-d H:i:s')
-    {
-        $d = DateTime::createFromFormat($format, $date);
-        return $d && $d->format($format) == $date;
-    }
-
     public function __construct($fromCity, $toCity, $departureDate, $departureTime, $ticketPlaces, $ticketFreePlaces, $ticketPrice)
     {
         $this->setFromCity($fromCity);

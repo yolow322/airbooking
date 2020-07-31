@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Used to adding orders to mini cart
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/Order.php';
 require_once 'classes/CRUD.php';

@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Used to for adding new ticket on admin page
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/Ticket.php';
 require_once 'classes/CRUD.php';

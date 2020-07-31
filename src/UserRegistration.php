@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * For user registration
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/User.php';
 require_once 'classes/CRUD.php';

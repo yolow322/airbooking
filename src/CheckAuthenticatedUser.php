@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * Showing user name and user surname and checking authorization user
+ *
+ */
 require_once 'classes/DataBaseConfig.php';
 require_once 'classes/CRUD.php';
 
