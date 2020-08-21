@@ -13,7 +13,7 @@ $query = new CRUD();
 session_start();
 if (!empty($query->checkingOrderedTicketsForUser(intval($_POST['ticket_id']), intval($_SESSION['id'])))) {
     foreach ($query->getOrdersInMiniCart(intval($_POST['ticket_id']), intval($_SESSION['id']))->fetchAll(PDO::FETCH_ASSOC) as $tableRow) {
-        if ($tableRow['is_ordered_for_this_user'] == 'true' || $tableRow['free_places'] == '0') {
+        if ($tableRow['is_ordered_for_this_user'] == '1' || $tableRow['free_places'] == '0') {
             echo 'Вы больше не можете добавить в корзину билет рейса ' . $tableRow['from_city'] . '-' . $tableRow['to_city'] . '!';
         }
     }

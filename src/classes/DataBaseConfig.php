@@ -36,7 +36,7 @@ class DataBaseConfig
      */
     public function __construct()
     {
-        $this->db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres;user=postgres;password=111');
+        $this->db = new PDO('mysql:host=localhost;dbname=currency;charset=utf8', 'yolow', '1111');
     }
 
     /**

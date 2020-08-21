@@ -19,7 +19,7 @@ else {
                 <p class="cart-inp">Имя: <input readonly type="text" id="name" value="'.$tableRow['name'].'"></p>
                 <p class="cart-inp">Фамилия: <input readonly type="text" id="surname" value="'.$tableRow['surname'].'"></p>
                 <p class="cart-inp">Отчество: <input readonly type="text" id="last-name" value="'.$tableRow['last_name'].'"></p>
-                <p class="cart-inp">Рейс: <input readonly type="text" id="route" value="'.$tableRow['fromcity'].' - '.$tableRow['tocity'].'"></p>
+                <p class="cart-inp">Рейс: <input readonly type="text" id="route" value="'.$tableRow['from_city'].' - '.$tableRow['to_city'].'"></p>
                 <select class="places-list" data-ticket-id="'.$tableRow['ticket_id'].'">
                     <option class="place-item" hidden>Выбрать место</option>';
         for ($placesCount = 1; $placesCount < $tableRow['places'] + 1; $placesCount++) {

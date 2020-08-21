@@ -48,7 +48,7 @@ class CRUD extends DataBaseConfig
 
     public function createNewTicket($fromCity, $toCity, $departureDate, $departureTime, $ticketPlaces, $ticketFreePlaces, $ticketPrice): PDOStatement
     {
-        $stm = $this->getDb()->prepare("INSERT INTO TICKETS (FROM_CITY, TO_CITY, DEPARTURE_DATE, DEPARTURE_TIME, PLACES, FREE_PLACES, PRICE) VALUES (?, ?, TO_DATE(?, 'YYYY/MM/DD'), ?, ?, ?, ?)");
+        $stm = $this->getDb()->prepare("INSERT INTO TICKETS (FROM_CITY, TO_CITY, DEPARTURE_DATE, DEPARTURE_TIME, PLACES, FREE_PLACES, PRICE) VALUES (?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?, ?, ?, ?)");
         $stm->execute(array($fromCity, $toCity, $departureDate, $departureTime, $ticketPlaces, $ticketFreePlaces, $ticketPrice));
         return $stm;
     }
@@ -69,7 +69,7 @@ class CRUD extends DataBaseConfig
 
     public function getOrdersInMiniCart($ticketId, $userId): PDOStatement
     {
-        $stm = $this->getDb()->prepare("SELECT ORDERS.*, TICKETS.FROM_CITY, TICKETS.TO_CITY, TICKETS.FREE_PLACES FROM ORDERS INNER JOIN TICKETS ON TICKETS.ID = ORDERS.TICKET_ID WHERE ORDERS.TICKET_ID = ? AND ORDERS.USER_ID = ?");
+        $stm = $this->getDb()->prepare("SELECT ORDERS.*, TICKETS.FROM_CITY AS from_city, TICKETS.TO_CITY AS to_city, TICKETS.FREE_PLACES AS free_places FROM ORDERS INNER JOIN TICKETS ON TICKETS.ID = ORDERS.TICKET_ID WHERE ORDERS.TICKET_ID = ? AND ORDERS.USER_ID = ?");
         $stm->execute(array($ticketId, $userId));
         return $stm;
     }
@@ -104,7 +104,7 @@ class CRUD extends DataBaseConfig
 
     public function getAllOrdersInCart($userId): PDOStatement
     {
-        $stm = $this->getDb()->prepare("SELECT USERS.NAME, USERS.SURNAME, USERS.LAST_NAME, ORDERS.*, TICKETS.FROM_CITY AS fromCity, TICKETS.TO_CITY AS toCity, TICKETS.PLACES AS places FROM ORDERS INNER JOIN TICKETS ON TICKETS.ID = ORDERS.TICKET_ID INNER JOIN USERS ON USERS.ID = ORDERS.USER_ID WHERE USER_ID = ? AND PLACE = 0");
+        $stm = $this->getDb()->prepare("SELECT USERS.NAME as name, USERS.SURNAME as surname, USERS.LAST_NAME as last_name, ORDERS.*, TICKETS.FROM_CITY AS from_city, TICKETS.TO_CITY AS to_city, TICKETS.PLACES AS places FROM ORDERS INNER JOIN TICKETS ON TICKETS.ID = ORDERS.TICKET_ID INNER JOIN USERS ON USERS.ID = ORDERS.USER_ID WHERE USER_ID = ? AND PLACE = 0");
         $stm->execute(array($userId));
         return $stm;
     }
@@ -132,7 +132,7 @@ class CRUD extends DataBaseConfig
 
     public function getAllUserOrders($userId): PDOStatement
     {
-        $stm = $this->getDb()->prepare("SELECT TICKETS.ID AS TICKET_ID, ORDERS.ID AS ORDER_ID, ORDERS.PLACE AS PLACE, TICKETS.FROM_CITY AS fromCity, TICKETS.TO_CITY AS toCity, TICKETS.DEPARTURE_DATE AS tickDate, TICKETS.DEPARTURE_TIME AS tickTime, TICKETS.PRICE AS PRICE FROM ORDERS INNER JOIN TICKETS ON TICKETS.ID = ORDERS.TICKET_ID WHERE ORDERS.USER_ID = ? AND ORDERS.PLACE <> 0");
+        $stm = $this->getDb()->prepare("SELECT TICKETS.ID AS TICKET_ID, ORDERS.ID AS ORDER_ID, ORDERS.PLACE AS place, TICKETS.FROM_CITY AS from_city, TICKETS.TO_CITY AS to_city, TICKETS.DEPARTURE_DATE AS ticket_date, TICKETS.DEPARTURE_TIME AS ticket_time, TICKETS.PRICE AS price FROM ORDERS INNER JOIN TICKETS ON TICKETS.ID = ORDERS.TICKET_ID WHERE ORDERS.USER_ID = ? AND ORDERS.PLACE <> 0");
         $stm->execute(array($userId));
         return $stm;
     }
