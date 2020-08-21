@@ -46,4 +46,4 @@ create index user_id
     on orders (user_id);
 
 /*пароль, который нужно вводить при авторизации - 123*/
-INSERT INTO public.users (name, surname, last_name, login, password_hash, role) VALUES ('admin', 'admin', 'admin', 'admin', '$2y$10$zrNepTrPnXqcdd8Y9I6iX.u9PvFqsYdABCHqiRpy4BLb6mr7SfeU6', 'admin');
+INSERT INTO users (name, surname, last_name, login, password_hash, role) VALUES ('admin', 'admin', 'admin', 'admin', '$2y$10$zrNepTrPnXqcdd8Y9I6iX.u9PvFqsYdABCHqiRpy4BLb6mr7SfeU6', 'admin');
