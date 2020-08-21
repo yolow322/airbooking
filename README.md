@@ -1,3 +1,3 @@
-<p>В качестве СУБД использовал PostgreSQL. Для того, чтобы использовать страницу админа, необходимо создать запись в таблице Users (код для этого есть в файле init.sql).</p>
-<p>Для подключения к БД, необходимо в файле /src/classes/DataBaseConfig.php поменять в строчке: <code>$this->db = new PDO('pgsql:host=localhost;port=5432;dbname=postgres;user=postgres;password=111');</code>
-dbname - на ваше название БД, user - на ваш логин от БД, password - соответственно, на ваш пароль.</p>
+<p>Данный проект посвящен созданию сайта для бронирования авиабилетов.</p>
+<p>Для того, чтобы использовать страницу админа, необходимо создать запись в таблице Users (код для этого есть в файле init.sql).</p>
+<p>Для подключения к БД, необходимо в файле /src/classes/DataBaseConfig.php поменять в строчке: <code> $this->db = new PDO('mysql:host=localhost;dbname=currency;charset=utf8', 'yolow', '1111');</code> 'currency' - на ваше название БД, 'yolow' - на ваш логин от БД, '1111' - соответственно, на ваш пароль.</p>
